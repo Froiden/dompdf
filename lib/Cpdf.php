@@ -399,7 +399,7 @@ class Cpdf
     {
         $this->isUnicode = $isUnicode;
         $this->fontcache = rtrim($fontcache, DIRECTORY_SEPARATOR."/\\");
-        $this->tmp = ($tmp !== '' ? $tmp : sys_get_temp_dir());
+        $this->tmp = ($tmp !== '' ? $tmp : config('dompdf.temp_dir'));
         $this->newDocument($pageSize);
 
         $this->compressionReady = function_exists('gzcompress');
@@ -3300,7 +3300,7 @@ EOT;
     {
         // assume that $font contains the path and file but not the extension
         $name = basename($font);
-        $dir = dirname($font);
+        $dir = storage_path('fonts');
 
         $fontcache = $this->fontcache;
         if ($fontcache == '') {
