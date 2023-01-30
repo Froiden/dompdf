@@ -314,7 +314,7 @@ class Options
         $rootDir = realpath(__DIR__ . "/../");
         $this->setChroot(array($rootDir));
         $this->setRootDir($rootDir);
-        $this->setTempDir(config('dompdf.options.temp_dir'));
+        $this->setTempDir(storage_path('tmp'));
         $this->setFontDir($rootDir . "/lib/fonts");
         $this->setFontCache($this->getFontDir());
 
