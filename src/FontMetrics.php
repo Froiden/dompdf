@@ -229,7 +229,7 @@ class FontMetrics
             return false;
         }
 
-        $localTempFile = @tempnam(config('dompdf.options.temp_dir'), "dompdf-font-");
+        $localTempFile = @tempnam(storage_path('tmp'), "dompdf-font-");
         file_put_contents($localTempFile, $remoteFileContent);
 
         $font = Font::load($localTempFile);
