@@ -399,7 +399,7 @@ class Cpdf
     {
         $this->isUnicode = $isUnicode;
         $this->fontcache = rtrim($fontcache, DIRECTORY_SEPARATOR."/\\");
-        $this->tmp = storage_path('tmp');
+        $this->tmp = storage_path('app/tmp');
         $this->newDocument($pageSize);
 
         $this->compressionReady = function_exists('gzcompress');
